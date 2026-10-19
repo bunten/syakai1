@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>高校入試 社会 暗記学習アプリ（図表・表データ完全版）</title>
+    <style>
+        body { font-family: sans-serif; max-width: 750px; margin: 30px auto; padding: 20px; line-height: 1.6; background-color: #f4f6f9; }
+        .container { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; font-size: 24px; margin-bottom: 25px; }
+        .question-card { margin-bottom: 35px; padding: 20px; border: 1px solid #e1e8ed; border-radius: 8px; background: #fafbfc; }
+        .genre { font-size: 12px; color: #e74c3c; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; }
+        .question-text { font-size: 16px; font-weight: bold; margin-bottom: 15px; color: #333; }
+        /* 図表・表画像のスタイル */
+        .img-box { text-align: center; margin: 15px 0; background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .img-box img { max-width: 100%; height: auto; border-radius: 3px; }
+        select { font-size: 16px; padding: 8px 12px; width: 100%; max-width: 300px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; background: #fff; cursor: pointer; }
+        button { font-size: 15px; padding: 8px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        button:hover { background-color: #2980b9; }
+        .result { margin-top: 15px; padding: 12px; border-radius: 5px; font-size: 14px; display: none; }
+        .correct { background-color: #e8f8f5; color: #27ae60; border: 1px solid #a3e4d7; }
+        .incorrect { background-color: #ffd2d2; color: #c0392b; border: 1px solid #f5b7b1; }
+        .explanation { margin-top: 8px; font-size: 14px; color: #555; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📚 高校入試 社会 暗記学習アプリ（□1・完全版）</h1>
+
+    <!-- 問題1 -->
+    <div class="question-card" id="q1">
+        <div class="genre">地理（世界・地形）</div>
+        <div class="question-text">問1：図1中のQ（チベット高原・ヒマラヤ山脈付近）の地形断面に最も当てはまるものはどれか[cite: 1, 2]。</div>
+        
+        <div class="img-box">
+            <img src="figure.png" alt="地形断面図と地図">
+            <div style="font-size: 12px; color: #666; margin-top: 5px;">※図1および図2（ア〜エの地形断面図）[cite: 6]</div>
+        </div>
+
+        <select id="select1">
+            <option value="">-- 選択してください --</option>
+            <option value="ア">ア</option>
+            <option value="イ">イ</option>
+            <option value="ウ">ウ</option>
+            <option value="エ">エ</option>
+        </select><br>
+        
+        <button onclick="checkAnswer(1, 'エ', '中央部にチベット高原、ヒマラヤ山脈があるダイナミックな高標高の断面（エ）が該当します。')">解答する</button>
+        <div id="result1" class="result"></div>
+    </div>
+
+    <!-- 問題2 -->
+    <div class="question-card" id="q2">
+        <div class="genre">地理（国際的枠組み）</div>
+        <div class="question-text">問2：ユーロトンネル（海底トンネル）で結ばれ、シェンゲン協定によりパスポートなしで国境を通過できる地域統合に加盟している、図1の「A」の国はどれか。</div>
+        
+        <select id="select2">
+            <option value="">-- 選択してください --</option>
+            <option value="A（フランス）">A（フランス）</option>
+            <option value="B（ロシア）">B（ロシア）</option>
+            <option value="C（中国）">C（中国）</option>
+        </select><br>
+        
+        <button onclick="checkAnswer(2, 'A（フランス）', 'Aはフランスです。隣国のイギリスはその地域統合（EU）から離脱しています。')">解答する</button>
+        <div id="result2" class="result"></div>
+    </div>
+
+    <!-- 問題3 -->
+    <div class="question-card" id="q3">
+        <div class="genre">地理（世界の農産物）</div>
+        <div class="question-text">問3：表中の農産物のうち、フランスやロシアなどで生産量が多い「X」と、中国だけで莫大な生産量がある「Y」の正しい組み合わせはどれか。</div>
+        
+        <div class="img-box">
+            <img src="figure2.png" alt="各国の農産物の生産量と国内供給量を示す表">
+            <div style="font-size: 12px; color: #666; margin-top: 5px;">※各国の農産物の生産量と国内供給量に関する表[cite: 1, 2]</div>
+        </div>
+
+        <select id="select3">
+            <option value="">-- 選択してください --</option>
+            <option value="X-米、Y-小麦">X-米、Y-小麦</option>
+            <option value="X-小麦、Y-米">X-小麦、Y-米</option>
+            <option value="X-大豆、Y-米">X-大豆、Y-米</option>
+        </select><br>
+        
+        <button onclick="checkAnswer(3, 'X-小麦、Y-米', 'フランスやロシアで生産・供給量が多いXは小麦、中国で圧倒的な生産量を誇るYは米にあたります。')">解答する</button>
+        <div id="result3" class="result"></div>
+    </div>
+
+    <!-- 問題4 -->
+    <div class="question-card" id="q4">
+        <div class="genre">地理（世界のエネルギー）</div>
+        <div class="question-text">問4：図1の「B」の国（ロシア）における一次エネルギー供給構成（2023年）として最も適切なレーダーチャートはどれか。</div>
+        
+        <div class="img-box">
+            <img src="figure3.png" alt="一次エネルギー供給の構成を示す図3のレーダーチャート">
+            <div style="font-size: 12px; color: #666; margin-top: 5px;">※図3 一次エネルギー供給の構成（ア〜エ）[cite: 1, 2]</div>
+        </div>
+
+        <select id="select4">
+            <option value="">-- 選択してください --</option>
+            <option value="ア（中国：石炭の割合が高い）">ア（中国：石炭の割合が高い）</option>
+            <option value="イ（ロシア：天然ガスの割合が高い）">イ（ロシア：天然ガスの割合が高い）</option>
+            <option value="ウ（フランス：原子力の割合が高い）">ウ（フランス：原子力の割合が高い）</option>
+        </select><br>
+        
+        <button onclick="checkAnswer(4, 'イ（ロシア：天然ガスの割合が高い）', 'ロシア（B）は天然ガスの供給量が非常に大きいのが特徴です。')">解答する</button>
+        <div id="result4" class="result"></div>
+    </div>
+
+</div>
+
+<script>
+    function checkAnswer(qNum, correctAns, explanationText) {
+        const selectBox = document.getElementById("select" + qNum);
+        const resultDiv = document.getElementById("result" + qNum);
+        const userSelection = selectBox.value;
+
+        if (userSelection === "") {
+            resultDiv.style.display = "block";
+            resultDiv.className = "result incorrect";
+            resultDiv.innerHTML = "⚠️ 答えを選択してからボタンを押してください。";
+            return;
+        }
+
+        resultDiv.style.display = "block";
+        if (userSelection === correctAns) {
+            resultDiv.className = "result correct";
+            resultDiv.innerHTML = `🎉 <strong>正解です！</strong><div class="explanation">解説：${explanationText}</div>`;
+        } else {
+            resultDiv.className = "result incorrect";
+            resultDiv.innerHTML = `❌ <strong>残念！不正解です。</strong>（正解：${correctAns}）<div class="explanation">解説：${explanationText}</div>`;
+        }
+    }
+</script>
+
+</body>
+</html>
